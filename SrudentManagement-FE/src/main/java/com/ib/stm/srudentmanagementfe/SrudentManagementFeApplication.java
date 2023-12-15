@@ -1,13 +1,13 @@
-package com.ib.stm;
+package com.ib.stm.srudentmanagementfe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StudentManagementBEApplication {
+public class SrudentManagementFeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(StudentManagementBEApplication.class, args);
+        SpringApplication.run(SrudentManagementFeApplication.class, args);
     }
 
 }
