@@ -1,4 +1,4 @@
-package com.ib.stm.srudentmanagementfe;
+package com.ib.stm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
