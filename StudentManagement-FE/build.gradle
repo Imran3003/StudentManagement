@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
 
-	implementation project (':SrudentManagement-Common')
+	implementation project (':StudentManagement-Common')
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'

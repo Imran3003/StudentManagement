@@ -1,3 +1,6 @@
 rootProject.name = 'StudentManagement-BE'
+include ':StudentManagement-Common'
+project(':StudentManagement-Common').projectDir = new File('../StudentManagement-Common')
+
 
 

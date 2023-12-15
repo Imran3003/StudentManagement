@@ -1,7 +1,5 @@
 package com.ib.stm.models;
 
-import org.stringtemplate.v4.ST;
-
 /**
  * Sample.java
  *
@@ -19,5 +17,12 @@ public class Sample
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Sample{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
