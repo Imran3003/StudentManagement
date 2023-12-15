@@ -1,0 +1,4 @@
+rootProject.name = 'StudentManagement-FE'
+include ':SrudentManagement-Common'
+project(':SrudentManagement-Common').projectDir = new File('../SrudentManagement-Common')
+
