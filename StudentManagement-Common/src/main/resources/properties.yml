@@ -1,0 +1,8 @@
+fe:
+  server:
+    host: localhost
+    port: 8081
+be:
+  server:
+    host: localhost
+    port: 8082

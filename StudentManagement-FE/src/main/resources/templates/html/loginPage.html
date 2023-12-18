@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <title> Login </title>
-    <link rel="stylesheet" href="../css/loginPage.css">
+    <link rel="stylesheet" href="/css/loginPage.css">
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="../../FE/images/images.jpg" alt="">
+        <img src="/images/images.jpg" alt="">
         <div class="text">
           <span class="text-1">Every new friend is a <br> new adventure</span>
           <span class="text-2">Let's get connected</span>
@@ -32,15 +32,15 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-          <form action="passwordPage.html">
+          <form action="/login/FE">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-id-card"></i>
-                <input type="number" placeholder="Register Number" required>
+                <input minlength="5"  type="number" placeholder="Register Number" required name="regNo">
               </div>
               <div class="input-box">
                 <i class="far fa-calendar-alt"></i>
-                <input type="date" placeholder="DOB" required>
+                <input type="date" placeholder="DOB" required name="dob">
               </div>
               <div class="button input-box">
                 <input type="submit" value="Sumbit">
