@@ -1,9 +1,6 @@
 package com.ib.stm.models;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 
 /**
  * LoginCredential.java
@@ -15,7 +12,7 @@ import java.util.Date;
 @Service
 public class LoginCredential
 {
-   public static  String username;
+   public static  String regNo;
    public static long dob;
 
    public static boolean validate = false;
@@ -24,7 +21,7 @@ public class LoginCredential
    {
        if (userCredentials == null)
            return;
-       username = userCredentials.getUsername();
+       regNo = userCredentials.getUsername();
        dob = userCredentials.getDob();
    }
 
@@ -34,14 +31,14 @@ public class LoginCredential
 
        if (!validate)
        {
-           username = null;
+           regNo = null;
            dob = 0;
        }
    }
 
    public String getUsername()
    {
-       return username;
+       return regNo;
    }
 
     public Long getDob()

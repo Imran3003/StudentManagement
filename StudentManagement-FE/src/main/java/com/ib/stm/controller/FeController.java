@@ -6,6 +6,7 @@ import com.ib.stm.parser.PropertiesParser;
 import com.ib.stm.parser.PropertiesParserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,30 +38,27 @@ public class FeController
     }
 
     @RequestMapping("/login/FE")
-    private void login(@RequestParam String regNo, @RequestParam  @DateTimeFormat(pattern = "yyyy-MM-dd") Date dob)
+    private ModelAndView login(@RequestParam String regNo, @RequestParam  @DateTimeFormat(pattern = "yyyy-MM-dd") Date dob , Model model)
     {
-        System.out.println("username = " + regNo);
-        System.out.println("dob = " + dob);
-
         long date = dob.getTime();
-
-        System.out.println("date = " + date);
 
         UserCredentials userCredentials = new UserCredentials(regNo, date);
 
         PropertiesParser propertiesParser = PropertiesParserUtils.getPropertiesParserInstance();
 
-        System.out.println("propertiesParser = " + propertiesParser);
-
         String beBaseURL = propertiesParser.getBeBaseURL();
 
         Boolean status = restTemplate.postForObject(beBaseURL + "/login/validate", userCredentials, Boolean.class);
 
-        if (status)
-             loginCredential.setLoginCredential(userCredentials);
+        System.out.println("status = " + status);
 
-        System.out.println("username = " + loginCredential.getUsername());
-        System.out.println("dob = " + loginCredential.getDob());
+        if (status)
+        {
+            loginCredential.setLoginCredential(userCredentials);
+            return new ModelAndView("passwordPage.html");
+        }
+        model.addAttribute("message","No user found");
+        return new ModelAndView("loginPage.html");
 
     }
 
