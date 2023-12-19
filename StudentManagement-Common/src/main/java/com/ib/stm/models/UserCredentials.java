@@ -13,6 +13,7 @@ public class UserCredentials
 {
     private String username;
     public Long dob;
+    public String password;
     public UserCredentials(String username, Long dob) {
         this.username = username;
         this.dob = dob;
@@ -34,11 +35,20 @@ public class UserCredentials
         this.dob = dob;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "UserCredentials{" +
                 "username='" + username + '\'' +
                 ", dob=" + dob +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

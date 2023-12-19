@@ -1,6 +1,8 @@
 package com.ib.stm.controller;
 
 import com.ib.stm.models.UserCredentials;
+import com.ib.stm.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,11 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BeController {
 
+    @Autowired
+    UserService userService;
+
     @RequestMapping("login/validate")
     public Boolean validateUser(@RequestBody UserCredentials userCredentials)
     {
         System.out.println("userCredentials = " + userCredentials);
-        return false;
 
+        return userService.isUserValid(userCredentials);
+    }
+
+    @RequestMapping("BE/validatePassword")
+    public Boolean validatePassword(@RequestBody UserCredentials userCredentials)
+    {
+        System.out.println("userCredentials = " + userCredentials);
+
+        return userService.isUserPasswordValid(userCredentials);
     }
 }
