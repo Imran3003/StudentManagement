@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- Coding by CodingNepal | www.codingnepalweb.com-->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/home/vicky/imran/projects/StudentManagement/StudentManagement-FE/src/main/resources/static/css/loginPage.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .input-box {
+            position: relative;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .input-box i.unlocked {
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+        <div class="front">
+            <img src="../../FE/images/images1.jpg" alt="">
+            <div class="text">
+                <span class="text-1">Let's Go </span>
+            </div>
+        </div>
+        <div class="back">
+            <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
+            <div class="text">
+                <span class="text-1">Complete miles of journey <br> with one step</span>
+                <span class="text-2">Let's get started</span>
+            </div>
+        </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+            <div class="login-form">
+                <div class="title">Password</div>
+                <form id="loginForm">
+                    <div class="input-box">
+                        <i class="fas fa-lock" id="lockIcon"></i>
+                        <input type="password" id="passwordInput" placeholder="Enter your password" required style="padding: 2px; padding-left:25px;">
+                    </div>
+                    <div class="text"><a href="#">Forgot password?</a></div>
+                    <div class="button">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        const passwordInput = document.getElementById('passwordInput');
+        const lockIcon = document.getElementById('lockIcon');
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Replace these with your actual login credentials
+            const validUsername = 'demo';
+            const validPassword = 'password';
+
+            const enteredUsername = 'demo'; // You can get this from the user input
+            const enteredPassword = passwordInput.value;
+
+            if (enteredUsername === validUsername && enteredPassword === validPassword) {
+                // Simulate login success for the example
+                setTimeout(() => {
+                    lockIcon.classList.add('unlocked');
+                    lockIcon.className = 'fas fa-lock-open unlocked';
+                    }, 500);
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+
+</html>
